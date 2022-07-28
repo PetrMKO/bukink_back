@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import classes from "./Auth.module.css";
 import MyInput from "../../components/UI/MyInput/MyInput";
+import MyButton from "../../components/UI/MyButton/MyButton";
 const Auth = () => {
 
     const [blockState, changeBlockState] = useState(true)
@@ -16,7 +17,7 @@ const Auth = () => {
                         <form className={classes.content}>
                             <MyInput type="text" placeholder="Почта"/>
                             <MyInput type="password" placeholder="Пароль"/>
-                            <button>Вход</button>
+                            <MyButton>Вход</MyButton>
                         </form>
                     </div>
                     <div className={classes.registration}>
@@ -27,16 +28,16 @@ const Auth = () => {
                             <MyInput type="text" placeholder="Почта"/>
                             <MyInput type="password" placeholder="Пароль"/>
                             <MyInput type="password" placeholder="Повторите пароль"/>
-                            <button>Регистрация</button>
+                            <MyButton>Регистрация</MyButton>
                         </form>
                     </div>
                 </div>
                 <div className={blockState ? `${classes.buttonBlock} ${classes.blockLeft}` : `${classes.buttonBlock} ${classes.blockRight}`}>
-                    <button
-                        className={classes.changeButton}
+                    <MyButton
+                        //className={classes.changeButton}
                         onClick={() => changeBlockState(!blockState)}>
                         {blockState ? "Вход" : "Регистрация"}
-                    </button>
+                    </MyButton>
                 </div>
             </div>
         </div>

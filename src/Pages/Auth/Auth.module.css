@@ -65,6 +65,7 @@
 }
 
 .header{
+    border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,6 +80,11 @@
 .content {
     margin: 10px;
     padding: 10px;
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .changeButton{
