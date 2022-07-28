@@ -1,0 +1,87 @@
+.contentWrapper{
+    background-color: unset;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blockWrapper{
+    position: relative;
+    height: 517px;
+    width: 1406px;
+    background-color: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.auth_registration{
+    border-radius: 7px;
+    overflow: hidden;
+    height: 440px;
+    width: 1406px;
+    display: flex;
+}
+
+.buttonBlock{
+    border-radius: 10px;
+    box-sizing: border-box;
+    height: 517px;
+    width: 703px;
+    background-color: rgb(252, 206, 86);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blockLeft{
+    left: 0;
+    transition: all 300ms;
+}
+
+.blockRight{
+    left: 703px;
+    transition: all 300ms;
+}
+
+.auth{
+    box-sizing: border-box;
+    margin: 0;
+    height: 440px;
+    background-color: papayawhip;
+    width: 703px;
+}
+
+.registration{
+    box-sizing: border-box;
+    height: 440px;
+    background-color: papayawhip;
+    width: 703px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #C4C4C4;
+    height: 80px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+}
+
+.content {
+    margin: 10px;
+    padding: 10px;
+}
+
+.changeButton{
+    width: 150px;
+    height: 100px;
+}
