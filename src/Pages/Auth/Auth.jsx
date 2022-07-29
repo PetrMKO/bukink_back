@@ -34,7 +34,7 @@ const Auth = () => {
                 </div>
                 <div className={blockState ? `${classes.buttonBlock} ${classes.blockLeft}` : `${classes.buttonBlock} ${classes.blockRight}`}>
                     <MyButton
-                        //className={classes.changeButton}
+                        className={classes.changeButton}
                         onClick={() => changeBlockState(!blockState)}>
                         {blockState ? "Вход" : "Регистрация"}
                     </MyButton>
