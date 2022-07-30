@@ -1,12 +1,16 @@
 import './styles/App.css';
-import Auth from "./Pages/Auth/Auth";
+import Auth from "./pages/Auth/Auth";
 import MainSearch from "./components/MainSearch/MainSearch";
-import SearchPage from "./Pages/Search/SearchPage";
+import SearchPage from "./pages/Search/SearchPage";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div className="App">
+        <Header/>
         <SearchPage/>
+        <Footer/>
     </div>
   );
 }
