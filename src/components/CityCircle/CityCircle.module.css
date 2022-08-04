@@ -1,0 +1,26 @@
+.imgWrapper {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  margin: 0 10px;
+  overflow: hidden;
+  padding: 4px;
+  border-radius: 50%;
+  border: aquamarine solid 3px;
+}
+.imgWrapper .cityIcon {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  transition-duration: 0.1s;
+}
+.imgWrapper .cityIcon:before {
+  background-color: #1d262d;
+  width: 100px;
+  height: 100px;
+}
+.imgWrapper .cityIcon:hover {
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=CityCircle.module.css.map */

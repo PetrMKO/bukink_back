@@ -1,0 +1,26 @@
+.datePickerInputWrapper {
+  background-color: white;
+  cursor: pointer;
+  border: unset;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: min-content;
+  border-radius: 0;
+  height: 44px;
+}
+
+.datePickerInput {
+  box-sizing: border-box;
+  width: 90px;
+  border: none;
+  font-size: 16px;
+  height: 44px;
+  line-height: 44px;
+  padding: 0 10px;
+  border-radius: 0;
+  outline: none;
+}
+
+/*# sourceMappingURL=DateInput.module.css.map */

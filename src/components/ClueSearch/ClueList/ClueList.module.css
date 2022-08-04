@@ -1,0 +1,23 @@
+.cityInputMenu {
+  position: absolute;
+  z-index: 100;
+  background-color: white;
+  height: auto;
+  left: -1px;
+  top: 43px;
+  right: 0;
+  border: 1px solid grey;
+  border-top: none;
+  display: block;
+  padding-top: 2px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+/*# sourceMappingURL=ClueList.module.css.map */

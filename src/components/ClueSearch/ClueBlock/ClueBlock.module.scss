@@ -1,0 +1,23 @@
+.clueWrapper{
+  box-sizing: border-box;
+  width: 100%;
+  border-top: 1px solid teal;
+  min-height: 55px;
+  padding: 8px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #e1e1e1;
+  }
+
+  .city{
+    color: black;
+  }
+
+  .country{
+    color: grey;
+  }
+}

@@ -1,30 +1,84 @@
-import React, {forwardRef, useState} from 'react';
+import React, {forwardRef, useEffect, useState} from 'react';
 import classes from "./MainSearch.module.css"
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import PropTypes from 'prop-types';
-import MyButton from "../UI/MyButton/MyButton";
 import MyInput from "../UI/MyInput/MyInput";
+import DateInput from "../UI/DateInput/DateInput";
+import DatePicker from "react-datepicker";
+import ExampleCustomInput from "../UI/DateInput/DateInput";
+import MyButton from "../UI/MyButton/MyButton";
+import SearchButton from "../UI/SearchButton/SearchButton";
+import ClueSearch from "../ClueSearch/ClueSearch";
+import getService from "../../API/GetService";
+import {useFetching} from "../../hooks/useFetching";
+import {useDispatch, useSelector} from "react-redux";
 
 const MainSearch = () => {
-    const [startDate, setStartDate] = useState(new Date())
-    const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
-        <button className={classes.datePickerInput} onClick={onClick} ref={ref}>
-            {value}
-        </button>
-    ));
+
+    const [startDate, setStartDate] = useState()
+    const [endDate, setEndDate] = useState()
+
+    const [city, setCity] = useState("")
+    const [clueCities, setClueCities] = useState([])
+
+    const dispatch = useDispatch()
+    const searchValue = useSelector(state => state)
+
+    const [fetchClue, isLoading, error] = useFetching(async (part) => {
+        const response = await getService.getCLueCities(part);
+        setClueCities(response)
+
+    })
+    useEffect(()=> {
+        fetchClue(city)
+    }, [city])
+
+
+
 
     return (
         <div className={classes.searchWrapper}>
-            <form action="#" className={classes.searchForm}>
-                <MyInput/>
-                <DatePicker
-                    className={classes.datePickerWrapper}
-                    selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    customInput={<ExampleCustomInput/>}
+            <div className={classes.searchForm}>
+                <ClueSearch
+                    value={city}
+                    setValue={setCity}
+                    list={clueCities}
                 />
-            </form>
+                <div className={classes.datePickerWrapper}>
+                    <DatePicker
+                        isClearable={!!startDate}
+                        selected={startDate}
+                        onChange={(date) => {
+                            setStartDate(date)
+                            dispatch({type:"SET_CHECKIN", payload: date})
+                        }}
+                        selectsStart
+                        startDate={startDate}
+                        endDate={endDate}
+                        name={"Заезд"}
+                        customInput={<ExampleCustomInput/>}
+                    />
+                </div>
+
+                <div className={classes.datePickerWrapper}>
+                    <DatePicker
+                        isClearable={!!endDate}
+                        selected={endDate}
+                        onChange={(date)=>{
+                            setEndDate(date)
+                            dispatch({type:"SET_CHECKOUT", payload: date})
+                        }}
+                        selectsEnd
+                        startDate={startDate}
+                        endDate={endDate}
+                        minDate={startDate}
+                        name={"Выезд"}
+                        customInput={<ExampleCustomInput/>}
+                    />
+                </div>
+                <SearchButton onClick={()=> console.log(searchValue)}>
+                    Поехали
+                </SearchButton>
+            </div>
         </div>
     );
 };

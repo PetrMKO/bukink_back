@@ -1,0 +1,20 @@
+.cityInputWrapper {
+  position: relative;
+  width: min-content;
+}
+
+.cityInput {
+  padding: 0 10px;
+  border: none;
+  border-right: 1px dashed grey;
+  box-sizing: content-box;
+  width: 400px;
+  font-size: 16px;
+  height: 44px;
+  line-height: 44px;
+  outline: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+/*# sourceMappingURL=ClueSearch.module.css.map */
