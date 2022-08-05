@@ -11,7 +11,7 @@ const defaultSearchState = {
 export const searchReducer = (state = defaultSearchState, action) => {
     switch (action.type){
         case "SET_CITY":
-            console.log(action.payload)
+            // console.log(action.payload)
             return {...state, city: {
                     id: action.payload.id,
                     name: action.payload.name

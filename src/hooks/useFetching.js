@@ -5,7 +5,7 @@ import {useState, useTransition} from "react";
 export const useFetching = (callback) => {
 
     const [isLoading, setIsLoading] = useState(false),
-          [error, setError] = useState("");                   //state для ошибки и состояния запроса
+          [error, setError] = useState(null);                   //state для ошибки и состояния запроса
 
     const fetching = async (...args) => {                               //функция, которую нужно вызвать, чтобы обработать callback
         try{

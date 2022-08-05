@@ -14,7 +14,7 @@ const ClueList = ({value, list, active, setActive, ...props}) => {
             onClick={(event)=> {
                 event.stopPropagation()
             }}
-            className={value && list.length && active? visibleCLass : hiddenCLass}
+            className={value != "" && list.length && active ? visibleCLass : hiddenCLass}
         >
             {list.map(value => <ClueBlock city={value} set={setActive}/>)}
         </div>

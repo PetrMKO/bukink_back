@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import classes from "./TopCities.module.css";
-import CityCircle from "../CityCircle/CityCircle";
+import CityCircle from "../UI/CityCircle/CityCircle";
 const TopCities = () => {
     const [cities, setCities] = useState(
         [{src:'https://avatars.mds.yandex.net/get-travel-hotels/2456341/region_image_213_0/offer-travel-desktop', name: 'Москва', key: 'i1'},

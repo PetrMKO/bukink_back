@@ -6,6 +6,8 @@ footer {
   background-color: #1d262d;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  bottom: 0;
 }
 
 /*# sourceMappingURL=Footer.module.css.map */

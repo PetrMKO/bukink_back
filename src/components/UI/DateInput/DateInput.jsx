@@ -6,7 +6,7 @@ import DatePicker from "react-datepicker";
 import DateImg from "../../../img/dateImg";
 
 
-    const ExampleCustomInput = forwardRef((props, ref) => (
+    const DateInput = forwardRef((props, ref) => (
         <div className={classes.datePickerInputWrapper}
              ref={ref}
              onClick={props.onClick}
@@ -19,7 +19,7 @@ import DateImg from "../../../img/dateImg";
                 {/*    onChange={props.onChange}*/}
                 {/*/>*/}
             <div className={classes.datePickerInput}>
-                {props.value ? props.value : props.placeholder}
+                {props.value ? props.value : props.name}
             </div>
             <div>
                 {props.value ? <DateImg white={true}/> : <DateImg white={false}/>}
@@ -27,4 +27,4 @@ import DateImg from "../../../img/dateImg";
         </div>
     ));
 
-export default ExampleCustomInput;
+export default DateInput;

@@ -12,7 +12,7 @@
   border-radius: 50%;
   width: 100px;
   height: 100px;
-  transition-duration: 0.1s;
+  transition-duration: 0.5s;
 }
 .imgWrapper .cityIcon:before {
   background-color: #1d262d;

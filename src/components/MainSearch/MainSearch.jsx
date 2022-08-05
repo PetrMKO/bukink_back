@@ -17,7 +17,8 @@ const MainSearch = () => {
     const [startDate, setStartDate] = useState()
     const [endDate, setEndDate] = useState()
 
-    const [city, setCity] = useState("")
+    const [city, setCity] = useState({})
+
     const [clueCities, setClueCities] = useState([])
 
     const dispatch = useDispatch()
@@ -26,11 +27,11 @@ const MainSearch = () => {
     const [fetchClue, isLoading, error] = useFetching(async (part) => {
         const response = await getService.getCLueCities(part);
         setClueCities(response)
-
     })
     useEffect(()=> {
         fetchClue(city)
     }, [city])
+
 
 
 
@@ -45,6 +46,7 @@ const MainSearch = () => {
                 />
                 <div className={classes.datePickerWrapper}>
                     <DatePicker
+                        dateFormat ={"dd.MM.yyyy"}
                         isClearable={!!startDate}
                         selected={startDate}
                         onChange={(date) => {
@@ -55,12 +57,13 @@ const MainSearch = () => {
                         startDate={startDate}
                         endDate={endDate}
                         name={"Заезд"}
-                        customInput={<ExampleCustomInput/>}
+                        customInput={<DateInput/>}
                     />
                 </div>
 
                 <div className={classes.datePickerWrapper}>
                     <DatePicker
+                        dateFormat ={"dd.MM.yyyy"}
                         isClearable={!!endDate}
                         selected={endDate}
                         onChange={(date)=>{
@@ -72,7 +75,7 @@ const MainSearch = () => {
                         endDate={endDate}
                         minDate={startDate}
                         name={"Выезд"}
-                        customInput={<ExampleCustomInput/>}
+                        customInput={<DateInput/>}
                     />
                 </div>
                 <SearchButton onClick={()=> console.log(searchValue)}>
