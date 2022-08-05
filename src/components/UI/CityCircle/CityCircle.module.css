@@ -4,22 +4,28 @@
   display: flex;
   margin: 0 10px;
   overflow: hidden;
-  padding: 4px;
+  padding: 0;
   border-radius: 50%;
   border: aquamarine solid 3px;
 }
-.imgWrapper .cityIcon {
+.imgWrapper .imgSecondWrapper {
+  border: 2px solid blue;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 96px;
+  height: 96px;
+}
+.imgWrapper .imgSecondWrapper .cityIcon {
+  border-radius: 50%;
+  width: 96px;
+  height: 96px;
   transition-duration: 0.5s;
 }
-.imgWrapper .cityIcon:before {
+.imgWrapper .imgSecondWrapper .cityIcon:before {
   background-color: #1d262d;
   width: 100px;
   height: 100px;
 }
-.imgWrapper .cityIcon:hover {
+.imgWrapper .imgSecondWrapper .cityIcon:hover {
   transform: scale(1.1);
 }
 
