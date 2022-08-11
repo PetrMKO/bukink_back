@@ -3,22 +3,22 @@ import classes from "./ClueSearch.module.css";
 import ClueList from "./ClueList/ClueList";
 import {useDispatch, useSelector} from "react-redux";
 
-const ClueSearch = ({value, setValue, list, onChange,...props}) => {
-    console.log(list)
+const ClueSearch = ({value, setValue, list, onChange, className, onBoxClick, onInputChange, ...props}) => {
 
     const dispatch = useDispatch()
     const city = useSelector(state => state.city.name)
-    const [isActive, setIsActive] = useState(true)
+
+    const [isActive, setIsActive] = useState(false)
     return (
-        <div className={classes.cityInputWrapper}>
+        <div className={className ? className : classes.cityInputWrapper}>
             <input
                 type="text"
                 className={classes.cityInput}
                 value={city}
                 placeholder={"Куда желаете поѣхать"}
-                onChange={(e)=>{
-                    dispatch({type:"SET_CITY", payload: {id:"", name: e.target.value}})
-                    setIsActive(true)
+                onChange={(e) => {
+                    onInputChange(e)
+                    setIsActive(true);
                 }}
             />
             <ClueList
@@ -26,6 +26,7 @@ const ClueSearch = ({value, setValue, list, onChange,...props}) => {
                 list={list}
                 active={isActive}
                 setActive={setIsActive}
+                onBoxClick = {onBoxClick}
             />
         </div>
     );

@@ -1,6 +1,6 @@
 import {createStoreHook} from "react-redux";
-import {searchReducer} from "./searchReducer";
+import {searchFieldsReducer} from "./searchFieldsReducer";
 import {createStore} from "redux";
 
 
-export const store = createStore(searchReducer)
+export const store = createStore(searchFieldsReducer)

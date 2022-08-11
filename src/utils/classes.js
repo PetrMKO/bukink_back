@@ -1,3 +1,4 @@
+"useStrict"
 import PropTypes from "prop-types";
 
 export const mergeClasses = (classArray) => {

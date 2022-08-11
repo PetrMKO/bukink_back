@@ -21,7 +21,7 @@ const Auth = () => {
                         </form>
                     </div>
                     <div className={classes.registration}>
-                        <div className={classes.header}>
+                        <div className={classes.header} onClick={() => console.log("hjh")}>
                             Регистрация
                         </div>
                         <form className={classes.content}>
