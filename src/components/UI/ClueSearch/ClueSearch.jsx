@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import classes from "./ClueSearch.module.css";
 import ClueList from "./ClueList/ClueList";
 import {useDispatch, useSelector} from "react-redux";
+import {setCityAction} from "../../../store/searchFieldsReducer";
 
 const ClueSearch = ({value, setValue, list, onChange, className, onBoxClick, onInputChange, ...props}) => {
 
@@ -9,6 +10,20 @@ const ClueSearch = ({value, setValue, list, onChange, className, onBoxClick, onI
     const city = useSelector(state => state.city.name)
 
     const [isActive, setIsActive] = useState(false)
+
+    useEffect(() => {
+        if(city === ''){
+            setIsActive(false)
+            setCityAction({
+                id: '',
+                name:''
+            })
+        }
+        if(city !== ''){
+            setIsActive(true)
+        }
+    }, [city])
+
     return (
         <div className={className ? className : classes.cityInputWrapper}>
             <input
@@ -18,7 +33,6 @@ const ClueSearch = ({value, setValue, list, onChange, className, onBoxClick, onI
                 placeholder={"Куда желаете поѣхать"}
                 onChange={(e) => {
                     onInputChange(e)
-                    setIsActive(true);
                 }}
             />
             <ClueList

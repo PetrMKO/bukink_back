@@ -1,0 +1,26 @@
+.navBar{
+  padding: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rightItems{
+  right: 0;
+}
+.leftItems{
+  left: 0;
+}
+
+.navLink{
+  color: #faf4f4;
+  text-decoration: none;
+  padding: 0.7em 1em;
+  border: 1px solid transparent;
+  &:hover{
+    box-sizing: border-box;
+    color: #faf4f4;
+    border-radius: 0.5em;
+    border: 1px solid #faf4f4;
+  }
+}

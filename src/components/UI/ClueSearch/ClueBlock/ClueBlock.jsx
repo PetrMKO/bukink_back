@@ -9,11 +9,11 @@ const ClueBlock = ({city,set, onBoxClick, ...props}) => {
         <div className={classes.clueWrapper}
             onClick={() => {
                 onBoxClick(city)
-                set()
+                set(false)
             }}
         >
             <div className={classes.city}>{city.name}</div>
-            <div className={classes.country}>{city.country}</div>
+            <div className={classes.country}>{city.id}</div>
         </div>
     );
 };

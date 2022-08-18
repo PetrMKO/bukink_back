@@ -1,0 +1,19 @@
+.hotelResult{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.hotelList{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hotelResultWrapper{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}

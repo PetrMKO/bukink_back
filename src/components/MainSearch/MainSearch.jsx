@@ -1,11 +1,8 @@
-import React, {forwardRef, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import classes from "./MainSearch.module.css"
 import "react-datepicker/dist/react-datepicker.css";
-import MyInput from "../UI/MyInput/MyInput";
 import DateInput from "../UI/DateInput/DateInput";
 import DatePicker from "react-datepicker";
-import ExampleCustomInput from "../UI/DateInput/DateInput";
-import MyButton from "../UI/MyButton/MyButton";
 import SearchButton from "../UI/SearchButton/SearchButton";
 import ClueSearch from "../UI/ClueSearch/ClueSearch";
 import getService from "../../API/GetService";
@@ -13,7 +10,7 @@ import {useFetching} from "../../hooks/useFetching";
 import {useDispatch, useSelector} from "react-redux";
 import {setCityAction} from "../../store/searchFieldsReducer";
 
-const MainSearch = () => {
+const MainSearch = ({onClick, ...props}) => {
 
     const [startDate, setStartDate] = useState()
     const [endDate, setEndDate] = useState()
@@ -29,11 +26,13 @@ const MainSearch = () => {
 
 
     const [fetchClue, isLoading, error] = useFetching(async (part) => {
+        // console.log(part);
         const response = await getService.getCLueCities(part);
-        setClueCities(response)
+        setClueCities(response.data)
     })
     useEffect(()=> {
-        fetchClue(city)
+        // console.log(searchValue.city.name)
+        fetchClue(searchValue.city.name)
     }, [searchValue])
 
 
@@ -48,11 +47,7 @@ const MainSearch = () => {
             name: e.target.value
         }
         dispatch(setCityAction(city))
-
-
     }
-
-
 
 
     return (
@@ -98,7 +93,7 @@ const MainSearch = () => {
                         customInput={<DateInput/>}
                     />
                 </div>
-                <SearchButton onClick={()=> console.log(searchValue)}>
+                <SearchButton onClick={onClick}>
                     Поехали
                 </SearchButton>
             </div>

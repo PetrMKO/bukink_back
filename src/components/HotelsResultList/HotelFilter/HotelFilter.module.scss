@@ -1,0 +1,31 @@
+.filter{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 0 1em;
+}
+
+.filterInput{
+  border-radius: 0.2em;
+  border: 1px solid #2c47f4;
+}
+
+.sortQuery{
+  margin: 1em 0;
+  padding: 0.3em;
+}
+
+.priceFilter{
+  width: 70px;
+}
+
+.ratingFilter{
+  width: 40px;
+}
+
+.minPriceFilter{
+}
+
+.maxPriceFilter{
+
+}

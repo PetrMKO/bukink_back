@@ -1,0 +1,38 @@
+.hotelCard{
+  width: fit-content;
+  height: auto;
+  display: flex;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border: 1px solid grey;
+  border-radius: 10px;
+
+  .hotelIcon{
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+
+    .cityImg{
+      z-index: 1;
+      height: 100%;
+      width: 100px;
+      object-fit: cover;
+    }
+  }
+
+  .hotelInfo{
+    width: 370px;
+    margin-left: 10px;
+    margin-right: 10px;
+      table{
+        text-align: left;
+      }
+  }
+
+  .hotelRating{
+    width: 80px;
+    border-left: #1d262d solid;
+  }
+}

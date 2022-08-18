@@ -8,7 +8,7 @@ const TopCities = ({cities, setCities, ...props}) => {
         <div className={classes.topCitiesWrapper}>
             <div className={classes.cities}>
                 {cities.map(value =>
-                    <CityCircle src={value.src}/>
+                    <CityCircle src={value.src} key={value.key}/>
                 )}
             </div>
         </div>
