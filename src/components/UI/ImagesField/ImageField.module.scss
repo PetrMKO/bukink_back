@@ -1,0 +1,28 @@
+.wrapper{
+  height: 300px;
+  width: 100%;
+  display: flex;
+
+  .image{
+    box-sizing: border-box;
+    padding: 0.2em;
+  }
+
+  .mainImage{
+    width: 50%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .imagesWrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .smallImage{
+      height: 50%;
+      width: 50%;
+    }
+  }
+
+}

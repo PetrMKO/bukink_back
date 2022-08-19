@@ -12,6 +12,8 @@ export const searchHotelsResultReducer = (state = defaultState, action) => {
             return {...state, hotels: state.hotels.concat(action.payload)}
         case CLEAR_RESULT_LIST:
             return {...state, hotels: []}
+        default:
+            return state
     }
 }
 

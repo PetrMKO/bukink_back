@@ -10,12 +10,12 @@ const StartContent = () => {
     const [cities, setCities] = useState([])//state городов для TopCities, должен поддтягиваться через запрос
 
     useEffect( () => {
-        async function fetchData() {
-            const res = await getService.getTopCities(5)
+        async function fetchData(count) {
+            const res = await getService.getTopCities(count)
             setCities(res.data)
         }
 
-        fetchData()
+        fetchData(5)
 
     }, [])
 

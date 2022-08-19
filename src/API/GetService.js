@@ -21,5 +21,10 @@ export default class getService{
         const response = await axios.get(url)
         return response;
     }
+
+    static async getHotelById(id){
+        const url = `http://localhost:3030/hotels?id=${id}`
+        return await axios.get(url)
+    }
 }
 

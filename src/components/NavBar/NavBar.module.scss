@@ -17,10 +17,11 @@
   text-decoration: none;
   padding: 0.7em 1em;
   border: 1px solid transparent;
+  transition: all 150ms;
+  border-radius: 0.5em;
   &:hover{
     box-sizing: border-box;
     color: #faf4f4;
-    border-radius: 0.5em;
     border: 1px solid #faf4f4;
   }
 }

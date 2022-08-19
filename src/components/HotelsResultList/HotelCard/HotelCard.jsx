@@ -1,6 +1,8 @@
 import React from 'react';
 import classes from "./HotelCard.module.css";
 import CityImg from "../../../img/CityImg";
+
+import {Link} from "react-router-dom";
 const HotelCard = ({item,...props}) => {
     return (
         <div className={classes.hotelCard}>
@@ -50,6 +52,7 @@ const HotelCard = ({item,...props}) => {
                     </tbody>
                 </table>
             </div>
+            <Link to={`/hotel/${item.id}`} target="_blank" className={classes.hotelLink}/>
         </div>
     );
 };

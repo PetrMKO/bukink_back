@@ -1,5 +1,13 @@
 .App {
   text-align: center;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: Arial;
+  font-weight: normal;
 }
 

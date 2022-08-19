@@ -6,6 +6,7 @@
   overflow: hidden;
   border: 1px solid grey;
   border-radius: 10px;
+  position: relative;
 
   .hotelIcon{
     height: 100px;
@@ -34,5 +35,13 @@
   .hotelRating{
     width: 80px;
     border-left: #1d262d solid;
+  }
+
+  .hotelLink{
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom: 0;
   }
 }
