@@ -8,5 +8,12 @@
   flex-direction: row;
   align-items: center;
 }
+.header .logo {
+  height: inherit;
+  width: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
 
 /*# sourceMappingURL=Header.module.css.map */

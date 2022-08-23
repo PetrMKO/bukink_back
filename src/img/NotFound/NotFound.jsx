@@ -3,13 +3,11 @@ import svg from './NotFound.svg'
 
 const NotFound = (props) => {
     return (
-        <div >
             <img
                 src={svg}
                 alt='Страница не найдена'
-                style={{width: '50%', height: '50%'}}
+                style={{height: "inherit"}}
             />
-        </div>
     );
 };
 

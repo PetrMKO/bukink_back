@@ -1,7 +1,8 @@
 .hotelResult{
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
+
   position: relative;
+  padding-right: 200px;
 }
 
 .hotelList{

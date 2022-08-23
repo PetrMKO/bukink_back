@@ -8,6 +8,16 @@
   border-radius: 10px;
   position: relative;
 
+  transition: box-shadow 0.1s ease-in;
+
+  &:hover{
+    box-shadow: 0 0 53px -9px rgba(44, 71, 244, 0.51);
+    .hotelRating{
+      background-color: rgba(44, 71, 244, 0.5);
+      color: #faf4f4;
+    }
+  }
+
   .hotelIcon{
     height: 100px;
     width: 100px;
@@ -34,7 +44,9 @@
 
   .hotelRating{
     width: 80px;
-    border-left: #1d262d solid;
+    border-left: 1px dashed #1d262d;
+    color: #1d262d;
+    transition: all 0.1s;
   }
 
   .hotelLink{

@@ -3,7 +3,7 @@ import data from './testDataBases/db.json'
 export default class getService{
 
     static async getCLueCities(part){
-        const url = `http://localhost:3030/cities?name_like=${part}`
+        const url = `https://bukink-back.herokuapp.com/cities/part?part=${part}`
         // console.log(url);
         const response = await axios.get(url)
         return response;

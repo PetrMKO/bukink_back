@@ -1,12 +1,11 @@
 import React, {useMemo, useState} from 'react';
 import MainSearch from "../../components/MainSearch/MainSearch";
-import TopCities from "../../components/TopCities/TopCities";
 import StartContent from "./StartContent/StartContent";
 import getService from "../../API/GetService";
 import {useDispatch, useSelector} from "react-redux";
 import HotelsResultList from "../../components/HotelsResultList/HotelsResultList";
 import {useSortedAndFilteredHotels} from "../../hooks/useHotels";
-import hotelCard from "../../components/HotelsResultList/HotelCard/HotelCard";
+import classes from "./SearchPage.module.css";
 const SearchPage = () => {
 
     const dispatch = useDispatch()
@@ -15,9 +14,6 @@ const SearchPage = () => {
     const [filter, setFilter] = useState({sort: "", priceStart: 0, priceEnd: 0, rating: 0})
     const [filterRange, setFilterRange] = useState({priceStart: 0, priceEnd: 0, rating: 0})
     const filteredHotels = useSortedAndFilteredHotels(hotels, filter)
-    console.log(filter)
-    console.log('filtered')
-    console.log(filteredHotels)
 
 
     const  searchHotels = async () => {
@@ -42,7 +38,7 @@ const SearchPage = () => {
 
 
     return (
-        <div>
+        <div className={classes.page}>
             <MainSearch onClick={searchHotels}/>
             {hotels.length === 0
                 ? <StartContent/>
@@ -52,9 +48,11 @@ const SearchPage = () => {
                     filter={filter}
                     setFilter={setFilter}
                     range={filterRange}
-                  />
+                />
             }
+
         </div>
+
     );
 };
 

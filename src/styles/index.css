@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Sathu, sans-serif;
+  font-family: Sathu, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

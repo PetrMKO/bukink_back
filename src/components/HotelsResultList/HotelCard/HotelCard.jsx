@@ -1,9 +1,11 @@
 import React from 'react';
 import classes from "./HotelCard.module.css";
-import CityImg from "../../../img/CityImg";
+import CityImg from "../../../img/CityImg/CityImg";
 
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 const HotelCard = ({item,...props}) => {
+    const navigate = useNavigate()
+
     return (
         <div className={classes.hotelCard}>
             <div className={classes.hotelIcon}>

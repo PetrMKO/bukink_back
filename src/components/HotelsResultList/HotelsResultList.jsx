@@ -8,6 +8,7 @@ const HotelsResultList = ({list, setList, filter, setFilter, range, ...props}) =
     // const []
 
     return (
+        <div className={classes.hotelResultWrapper}>
             <div className={classes.hotelResult}>
                 <HotelFilter
                     value={filter}
@@ -30,6 +31,7 @@ const HotelsResultList = ({list, setList, filter, setFilter, range, ...props}) =
                     ])}
                 </div>
             </div>
+        </div>
     );
 };
 

@@ -14,7 +14,7 @@ const HotelFilter = ({value, onFilterChange, range, options, ...props}) => {
                 value={value.sort}
                 onChange={(e) => onFilterChange({...value, sort: e.target.value})}
             >
-                <option value="">
+                <option value="" disabled={true}>
                     Сортировка
                 </option>
 

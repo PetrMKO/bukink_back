@@ -1,9 +1,11 @@
 .btnWrapper {
+  font-family: Sathu, sans-serif;
   height: 44px;
   width: 150px;
 }
 
 .btn {
+  font-family: Sathu, sans-serif;
   background-color: #2ca7f4;
   transition-duration: 0.2s;
   width: 100%;

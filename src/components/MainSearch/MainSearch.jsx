@@ -15,25 +15,24 @@ const MainSearch = ({onClick, ...props}) => {
     const [startDate, setStartDate] = useState()
     const [endDate, setEndDate] = useState()
 
-    const [city, setCityObj] = useState({})
-
-    const [clueCities, setClueCities] = useState([
-        {id: "123", name: "HHHH"}
-    ])
-
     const dispatch = useDispatch()
     const searchValue = useSelector(state => state)
 
+    const [clueCities, setClueCities] = useState([])
 
     const [fetchClue, isLoading, error] = useFetching(async (part) => {
-        // console.log(part);
         const response = await getService.getCLueCities(part);
         setClueCities(response.data)
     })
+
     useEffect(()=> {
-        // console.log(searchValue.city.name)
-        fetchClue(searchValue.city.name)
-    }, [searchValue])
+        if (searchValue.city.id === null && searchValue.city.name !== ""){
+            fetchClue(searchValue.city.name)
+        }
+        if (searchValue.city.id !== null){
+            setClueCities([])
+        }
+    }, [searchValue.city.name])
 
 
 
@@ -41,10 +40,10 @@ const MainSearch = ({onClick, ...props}) => {
         dispatch(setCityAction(city))
     }
 
-    const setCityWithoutID = (e) =>{
+    const setCityWithoutID = (value) =>{
         const city = {
-            id: "",
-            name: e.target.value
+            id: null,
+            name: value
         }
         dispatch(setCityAction(city))
     }
@@ -54,23 +53,22 @@ const MainSearch = ({onClick, ...props}) => {
         <div className={classes.searchWrapper}>
             <div className={classes.searchForm}>
                 <ClueSearch
-                    value={city}
+                    inputValue={searchValue.city.name}
                     onBoxClick={setCityWithID}
-                    onInputChange={setCityWithoutID}
+                    setInputValue={setCityWithoutID}
                     list={clueCities}
                 />
                 <div className={classes.datePickerWrapper}>
                     <DatePicker
                         dateFormat ={"dd.MM.yyyy"}
-                        isClearable={!!startDate}
-                        selected={startDate}
+                        isClearable={!!searchValue.checkIn}
+                        selected={searchValue.checkIn}
                         onChange={(date) => {
-                            setStartDate(date)
                             dispatch({type:"SET_CHECKIN", payload: date})
                         }}
                         selectsStart
-                        startDate={startDate}
-                        endDate={endDate}
+                        startDate={searchValue.checkIn}
+                        endDate={searchValue.checkOut}
                         name={"Заезд"}
                         customInput={<DateInput/>}
                     />
@@ -79,16 +77,15 @@ const MainSearch = ({onClick, ...props}) => {
                 <div className={classes.datePickerWrapper}>
                     <DatePicker
                         dateFormat ={"dd.MM.yyyy"}
-                        isClearable={!!endDate}
-                        selected={endDate}
+                        isClearable={!!searchValue.checkOut}
+                        selected={searchValue.checkOut}
                         onChange={(date)=>{
-                            setEndDate(date)
                             dispatch({type:"SET_CHECKOUT", payload: date})
                         }}
                         selectsEnd
-                        startDate={startDate}
-                        endDate={endDate}
-                        minDate={startDate}
+                        startDate={searchValue.checkIn}
+                        endDate={searchValue.checkOut}
+                        minDate={searchValue.checkIn}
                         name={"Выезд"}
                         customInput={<DateInput/>}
                     />

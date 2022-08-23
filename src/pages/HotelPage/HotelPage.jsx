@@ -2,22 +2,26 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import getService from "../../API/GetService";
 import classes from "./HotelPage.module.css";
-import MyButton from "../../components/UI/MyButton/MyButton";
-import image from "../../components/UI/Image/Image";
 import ImagesField from "../../components/UI/ImagesField/ImagesField";
+import {useSelector} from "react-redux";
 
 const HotelPage = () => {
+
+    const g = useSelector(state => state)
+
     const params = useParams()
     const [hotel, setHotel] = useState({})
 
+    const [images, setImages] = useState([]);
+
     const ratingColors = [
-        {maxRating: 0, color:'#f84d64'},
-        {maxRating: 3, color:'#dca241'},
-        {maxRating: 4, color:'#32ba43'},
-        {maxRating: 5, color:'#32ba43'}
+        {maxRating: 0, backgroundColor:'#f84d64'},
+        {maxRating: 2, backgroundColor:'#dca241'},
+        {maxRating: 4, backgroundColor:'#32ba43'},
+        {maxRating: 5, backgroundColor:'#32ba43'}
     ]
 
-    const [ratingColor, setColor] = useState({})
+    const [ratingColor, setColor] = useState(null)
 
 
     useEffect(() => {
@@ -27,15 +31,20 @@ const HotelPage = () => {
         get().then(data => {
             setHotel(data.data[0])
 
+            setImages([{src: data.data[0].image}, {src: data.data[0].image}, {src: data.data[0].image}, {src: data.data[0].image}, {src: data.data[0].image}])
+
             const color = ratingColors.reduce((color, currentValue) => {
 
-                if (+hotel.rating > currentValue.maxRating)
+                if (+hotel.rating < currentValue.maxRating)
                     return currentValue.color
                 return color
             })
 
-            setColor(color)
+            console.log(color);
+            setColor({backgroundColor: color})
 
+        }).then(() => {
+            console.log(ratingColor);
         })
     }, [])
 
@@ -52,7 +61,7 @@ const HotelPage = () => {
                 </div>
                 <div className={classes.rightColumn}>
                     <div className={classes.ratingWrapper}>
-                        <div className={classes.rating} style={{backgroundColor: ratingColor}}>
+                        <div className={classes.rating} style={ratingColor}>
                             {hotel.rating}
                         </div>
                         <span>
@@ -62,28 +71,11 @@ const HotelPage = () => {
                 </div>
             </div>
 
-            <ImagesField imagesArray={[
-                {
-                    "src": "https://avatars.mds.yandex.net/get-altay/4824927/2a00000180b7cf56ef3af4ee71c861c09cb7/XL",
-                    "alt": "img"
-                },
-                {
-                    "src": "https://avatars.mds.yandex.net/get-altay/4824927/2a00000180b7cf56ef3af4ee71c861c09cb7/XL",
-                    "alt": "img"
-                },
-                {
-                    "src": "https://avatars.mds.yandex.net/get-altay/4824927/2a00000180b7cf56ef3af4ee71c861c09cb7/XL",
-                    "alt": "img"
-                },
-                {
-                    "src": "https://avatars.mds.yandex.net/get-altay/4824927/2a00000180b7cf56ef3af4ee71c861c09cb7/XL",
-                    "alt": "img"
-                },
-                {
-                    "src": "https://avatars.mds.yandex.net/get-altay/4824927/2a00000180b7cf56ef3af4ee71c861c09cb7/XL",
-                    "alt": "img"
-                }
-            ]}/>
+            {images.length > 0 ?
+                <ImagesField imagesArray={images}/>
+                : <div></div>
+            }
+
         </div>
     );
 };

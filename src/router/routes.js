@@ -7,7 +7,12 @@ import HotelPage from "../pages/HotelPage/HotelPage";
 export const guestRoutes = [
     {path: 'main', component: <SearchPage/>, name:'Искать отели'},
     {path: 'login', component: <Auth/>, name:'Войти'},
-    {path: 'user', component: <NotFoundPage/>, name:'Личный кабинет'},
     {path: 'hotel/:id', component: <HotelPage/>},
+    {path: '*', component: <NotFoundPage/>}
+]
+
+export const userRoutes = [
+
+    {path: 'user', component: <NotFoundPage/>, name:'Личный кабинет'},
     {path: '*', component: <NotFoundPage/>}
 ]

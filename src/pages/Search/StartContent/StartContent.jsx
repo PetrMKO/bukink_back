@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import TopCities from "../../../components/TopCities/TopCities";
 import getService from "../../../API/GetService";
-import {useFetching} from "../../../hooks/useFetching";
-import MyButton from "../../../components/UI/MyButton/MyButton";
-import NotFoundPage from "../../NotFoundPage/NotFoundPage";
+
+import classes from "./StartContent.module.css";
 
 const StartContent = () => {
 
@@ -22,6 +21,9 @@ const StartContent = () => {
     return (
         <div>
             <TopCities cities={cities}/>
+            <div className={classes.whiteSpace}>
+                Какой-то стартовый контент типа статей и тд.
+            </div>
         </div>
     );
 };

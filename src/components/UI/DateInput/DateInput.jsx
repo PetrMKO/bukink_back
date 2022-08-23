@@ -3,7 +3,7 @@ import classes from './DateInput.module.css'
 import "react-datepicker/dist/react-datepicker.css";
 import "./DateInput.module.css"
 import DatePicker from "react-datepicker";
-import DateImg from "../../../img/dateImg";
+import DateImg from "../../../img/DateImg/dateImg";
 
 
     const DateInput = forwardRef((props, ref) => (
@@ -11,13 +11,6 @@ import DateImg from "../../../img/dateImg";
              ref={ref}
              onClick={props.onClick}
         >
-                {/*<input*/}
-                {/*    */}
-                {/*    type="text"*/}
-                {/*    value={props.value}*/}
-                {/*    placeholder={props.name}*/}
-                {/*    onChange={props.onChange}*/}
-                {/*/>*/}
             <div className={classes.datePickerInput}>
                 {props.value ? props.value : props.name}
             </div>

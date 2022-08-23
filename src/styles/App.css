@@ -3,11 +3,10 @@
   background-color: white;
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
 @font-face {
-  font-family: Arial;
+  font-family: Sathu, sans-serif !important;
   font-weight: normal;
 }
 

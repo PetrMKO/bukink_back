@@ -4,6 +4,7 @@ import classes from "./ImageField.module.css"
 import {mergeClasses} from "../../../utils/classes";
 
 const ImagesField = ({imagesArray, ...props}) => {
+    console.log(imagesArray)
     return (
         <div className={classes.wrapper}>
             <Image className={mergeClasses([classes.image, classes.mainImage])} strictClass={false}

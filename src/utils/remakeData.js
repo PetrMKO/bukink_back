@@ -29,6 +29,6 @@ export default async function remakeHotels(number) {
         })
     })
 
-    // console.log(data);
+    // console.log(data.js);
     return response;
 }

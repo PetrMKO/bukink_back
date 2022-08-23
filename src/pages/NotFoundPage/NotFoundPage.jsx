@@ -3,7 +3,7 @@ import NotFound from "../../img/NotFound/NotFound";
 
 const NotFoundPage = () => {
     return (
-        <div>
+        <div style={{height: '64.85vh', width: '100%'}}>
             <NotFound/>
         </div>
     );
