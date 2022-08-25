@@ -17,7 +17,8 @@
   cursor: pointer;
 }
 .btn:hover {
-  background-color: #4CAF50;
+  background-color: aquamarine;
+  color: #001250;
 }
 
 /*# sourceMappingURL=SearchButton.module.css.map */

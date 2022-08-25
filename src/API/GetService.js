@@ -22,6 +22,11 @@ export default class getService{
         return response;
     }
 
+    static async getNumberOfHotels(count){
+        const url = `http://localhost:3030/hotels?_limit=${count}`
+        return await axios.get(url)
+    }
+
     static async getHotelById(id){
         const url = `http://localhost:3030/hotels?id=${id}`
         return await axios.get(url)

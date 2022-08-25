@@ -16,12 +16,25 @@
   color: #faf4f4;
   text-decoration: none;
   padding: 0.7em 1em;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   transition: all 150ms;
   border-radius: 0.5em;
+  margin: 0 3px;
+
   &:hover{
     box-sizing: border-box;
     color: #faf4f4;
-    border: 1px solid #faf4f4;
+    border: 2px solid #faf4f4;
+
+  }
+}
+.active{
+  border: 2px solid aquamarine;
+  cursor: default;
+
+  &:hover{
+    box-sizing: border-box;
+    color: #faf4f4;
+    border: 2px solid aquamarine;
   }
 }

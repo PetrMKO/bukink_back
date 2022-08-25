@@ -8,7 +8,6 @@ import {useSortedAndFilteredHotels} from "../../hooks/useHotels";
 import classes from "./SearchPage.module.css";
 const SearchPage = () => {
 
-    const dispatch = useDispatch()
     const searchValue = useSelector(state => state)
     const [hotels, setHotels] = useState([])
     const [filter, setFilter] = useState({sort: "", priceStart: 0, priceEnd: 0, rating: 0})

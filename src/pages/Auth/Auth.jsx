@@ -2,12 +2,14 @@ import React, {useState} from 'react';
 import classes from "./Auth.module.css";
 import MyInput from "../../components/UI/MyInput/MyInput";
 import MyButton from "../../components/UI/MyButton/MyButton";
+import {mergeClasses} from "../../utils/classes";
 const Auth = () => {
 
     const [blockState, changeBlockState] = useState(true)
 
     return (
         <div className={classes.contentWrapper}>
+            Переделать бы этот ужас и авторизацию добавить
             <div className={classes.blockWrapper}>
                 <div className={classes.auth_registration}>
                     <div className={classes.auth}>
@@ -32,7 +34,7 @@ const Auth = () => {
                         </form>
                     </div>
                 </div>
-                <div className={blockState ? `${classes.buttonBlock} ${classes.blockLeft}` : `${classes.buttonBlock} ${classes.blockRight}`}>
+                <div className={blockState ? mergeClasses([classes.buttonBlock, classes.blockLeft]) : mergeClasses([classes.buttonBlock, classes.blockRight])}>
                     <MyButton
                         className={classes.changeButton}
                         onClick={() => changeBlockState(!blockState)}>

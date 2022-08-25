@@ -1,0 +1,123 @@
+.page{
+  width: 100%;
+
+  .userInfoWrapper{
+    box-sizing: border-box;
+    background-color: rgba(169, 169, 169, 0.3);
+    border-radius: 30px;
+    margin: 2em 10em;
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    .iconBlock{
+      width: 30%;
+
+      .iconWrapper{
+        position: relative;
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:before{
+          box-sizing: border-box;
+          content: '';
+          position: absolute;
+          width: inherit;
+          height: inherit;
+          border-radius: 50%;
+          transition: all 0.15s;
+          border: 10px solid transparent;
+        }
+
+        &:after{
+          content: '+';
+          width: 20px;
+          font-size: large;
+          font-weight: 900;
+          color: #1d262d;
+          position: absolute;
+          bottom: -60px;
+          left: 75px;
+          background-color: aquamarine;
+          padding: 1em;
+          border-top-right-radius: 1em;
+          border-top-left-radius: 1em;
+          transition: bottom 0.1s 0.1s;
+        }
+
+        &:hover{
+          &:before{
+            border: 10px solid aquamarine;
+            background-color: rgba(208, 208, 208, 0.1);
+          }
+          &:after{
+            bottom: 0;
+          }
+        }
+        .icon{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .userInfo{
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .infoItem{
+        border-bottom: 1px solid #1d262d;
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  .multiFunctionalBlock{
+    margin: 0 10em;
+    .navigatorWrapper{
+      margin: 1em 0;
+      border-bottom: 3px solid #2c47f4;
+
+      .navigator{
+        margin: 0 3em;
+        text-align: left;
+
+        .navLink{
+          cursor: pointer;
+          color: #1d262d;
+          text-decoration: none;
+          margin: 0 1em;
+          position: relative;
+
+          &:hover{
+            color: #2c47f4;
+          }
+
+        }
+        .active{
+          //#faf4f4;
+          cursor: default;
+          &:after{
+            content: '';
+            position: absolute;
+            border-radius: 2px;
+            width: 120%;
+            left: -10%;
+            bottom: -3.5px;
+            background-color: aquamarine;
+            height: 4px;
+          }
+
+        }
+      }
+    }
+  }
+}

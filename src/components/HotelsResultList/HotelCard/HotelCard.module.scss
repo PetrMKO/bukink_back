@@ -11,10 +11,11 @@
   transition: box-shadow 0.1s ease-in;
 
   &:hover{
-    box-shadow: 0 0 53px -9px rgba(44, 71, 244, 0.51);
+    box-shadow: 0 0 53px -9px rgba(44, 167, 244, 0.50);
     .hotelRating{
-      background-color: rgba(44, 71, 244, 0.5);
-      color: #faf4f4;
+      //transform: rotate(4deg) translate(3px, 3px);
+      background-color: rgba(44, 167, 244, 0.50);
+      color: #001250;
     }
   }
 

@@ -6,9 +6,7 @@ import ImagesField from "../../components/UI/ImagesField/ImagesField";
 import {useSelector} from "react-redux";
 
 const HotelPage = () => {
-
-    const g = useSelector(state => state)
-
+    
     const params = useParams()
     const [hotel, setHotel] = useState({})
 
